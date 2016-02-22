@@ -1,4 +1,4 @@
-export default factionData = {
+var factionData = {
   baseGame: {
     white: {
       generic: "Terran Conglomerate",
@@ -40,3 +40,5 @@ export default factionData = {
     }
   }
 }
+
+export default factionData;
