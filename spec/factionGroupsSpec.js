@@ -1,25 +1,43 @@
-import groupByExpansion from '../src/factionGroups.js'
-console.log(groupByExpansion);
+import factionGroups from '../src/factionGroups.js'
 
-describe('groupByExpansion', function(){
+describe('factionGroups', ()=>{
+  var objects;
 
-  it("should return only the objects with expansion: values", function(){
-    var objects = [
-      { expansion: 'A',
+  beforeEach(()=>{
+    objects = [
+      { set: 'A',
         name: 'foo'
       },
       {
-        expansion: 'A',
+        set: 'A',
         name: 'bar'
       },
       {
-        expansion: 'B',
+        set: 'B',
         name: 'baz'
       }
     ];
+  });
 
-    var filteredObjects = groupByExpansion(objects, 'A');
-    expect(filteredObjects.length).toEqual(2);
+  describe('bySet', () => {
+    it("should return only the objects with matching expansion values", function(){
+      var filteredObjects = factionGroups.bySet('A', objects);
+      expect(filteredObjects.length).toEqual(2);
+
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).toContain('foo');
+      expect(names).toContain('bar');
+      expect(names).not.toContain('baz');
+    });
+
+    it("should default to the full list of factions", ()=>{
+      var filteredObjects = factionGroups.bySet('Rise of the Ancients');
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).toContain('Exiles');
+      expect(names).toContain('Sentinels of Magellan');
+      expect(names).not.toContain('Orion Hegemony');
+
+    });
   });
 
 });

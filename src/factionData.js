@@ -1,44 +1,116 @@
-var factionData = {
-  baseGame: {
-    white: {
-      generic: "Terran Conglomerate",
-      specific: "Mechanema"
+var factionData = [
+    {
+      name:     "Terran Conglomerate",
+      kind:     "generic",
+      color:    "white",
+      set:      "Eclipse"
     },
-    green: {
-      generic: "Terran Union",
-      specific: "Planta"
+    {
+      name:     "Mechanema",
+      kind:     "specific",
+      color:    "white",
+      set:      "Eclipse"
     },
-    red: {
-      generic: "Terran Directorate",
-      specific: "Eridani Empire"
+    {
+      name:     "Terran Union",
+      kind:     "generic",
+      color:    "green",
+      set:      "Eclipse"
     },
-    black: {
-      generic: "Terran Alliance",
-      specific: "Orion Hegemony"
+    {
+      name:     "Planta",
+      kind:     "specific",
+      color:    "green",
+      set:      "Eclipse"
     },
-    yellow: {
-      generic: "Terran Republic",
-      specific: "Descendants of Draco"
+    {
+      name:     "Terran Directorate",
+      kind:     "generic",
+      color:    "red",
+      set:      "Eclipse"
     },
-    blue: {
-      generic: "Terran Federation",
-      specific: "Hydran Progress"
+    {
+      name:     "Eridani Empire",
+      kind:     "specific",
+      color:    "red",
+      set:      "Eclipse"
+    },
+    {
+      name:     "Terran Alliance",
+      kind:     "generic",
+      color:    "black",
+      set:      "Eclipse"
+    },
+    {
+      name:     "Orion Hegemony",
+      kind:     "specific",
+      color:    "black",
+      set:      "Eclipse"
+    },
+    {
+      name:     "Terran Republic",
+      kind:     "generic",
+      color:    "yellow",
+      set:      "Eclipse"
+    },
+    {
+      name:     "Descendants of Draco",
+      kind:     "specific",
+      color:    "yellow",
+      set:      "Eclipse"
+    },
+    {
+      name:     "Terran Federation",
+      kind:     "generic",
+      color:    "blue",
+      set:      "Eclipse"
+    },
+    {
+      name:     "Hydran Progress",
+      kind:     "specific",
+      color:    "blue",
+      set:      "Eclipse"
+    },
+
+
+    // RISE OF THE ANCIENTS
+    {
+      name:     "Wardens of Magellan",
+      kind:     "generic",
+      color:    "purple",
+      set:      "Rise of the Ancients"
+    },
+    {
+      name:     "Exiles",
+      kind:     "specific",
+      color:    "purple",
+      set:      "Rise of the Ancients"
+    },
+    {
+      name:     "Keepers of Magellan",
+      kind:     "generic",
+      color:    "gray",
+      set:      "Rise of the Ancients"
+    },
+    {
+      name:     "Rho Indi Syndicate",
+      kind:     "specific",
+      color:    "gray",
+      set:      "Rise of the Ancients"
+    },
+    {
+      name:     "Sentinels of Magellan",
+      kind:     "generic",
+      color:    "tan",
+      set:      "Rise of the Ancients"
+    },
+    {
+      name:     "Enlightened of Lyra",
+      kind:     "specific",
+      color:    "tan",
+      set:      "Rise of the Ancients"
     }
-  },
-  riseOfTheAncients: {
-    purple: {
-      generic: "Wardens of Magellan",
-      specific: "Exiles"
-    },
-    gray: {
-      generic: "Keepers of Magellan",
-      specific: "Rho Indi Syndicate"
-    },
-    tan: {
-      generic: "Sentinels of Magellan",
-      specific: "Enlightened of Lyra"
-    }
-  }
-}
+  ]
+
 
 export default factionData;
