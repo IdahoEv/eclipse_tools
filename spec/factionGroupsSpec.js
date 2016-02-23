@@ -6,15 +6,18 @@ describe('factionGroups', ()=>{
   beforeEach(()=>{
     objects = [
       { set: 'A',
-        name: 'foo'
+        name: 'foo',
+        kind: 'specific'
       },
       {
         set: 'A',
-        name: 'bar'
+        name: 'bar',
+        kind: 'generic'
       },
       {
         set: 'B',
-        name: 'baz'
+        name: 'baz',
+        kind: 'specific'
       }
     ];
   });
@@ -39,5 +42,46 @@ describe('factionGroups', ()=>{
 
     });
   });
+
+  describe('specifics', () => {
+    it("should return only specific factions", () => {
+      var filteredObjects = factionGroups.specifics(objects);
+      expect(filteredObjects.length).toEqual(2);
+
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).toContain('foo');
+      expect(names).toContain('baz');
+      expect(names).not.toContain('bar');
+    });
+
+    it("should default to the full list of factions", ()=>{
+      var filteredObjects = factionGroups.specifics();
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).toContain('Exiles');
+      expect(names).not.toContain('Sentinels of Magellan');
+      expect(names).toContain('Orion Hegemony');
+    });
+  });
+
+  describe('generics', () => {
+    it("should return only generic factions", () => {
+      var filteredObjects = factionGroups.generics(objects);
+      expect(filteredObjects.length).toEqual(1);
+
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).not.toContain('foo');
+      expect(names).not.toContain('baz');
+      expect(names).toContain('bar');
+    });
+
+    it("should default to the full list of factions", ()=>{
+      var filteredObjects = factionGroups.generics();
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).not.toContain('Exiles');
+      expect(names).toContain('Sentinels of Magellan');
+      expect(names).not.toContain('Orion Hegemony');
+    });
+  });
+
 
 });

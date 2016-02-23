@@ -9,6 +9,18 @@ export default class  {
     })
   }
 
+  static byKind(kind, factions = factionData) {
+    return factions.filter((faction, _idx, _arr) => {
+      return faction.kind == kind;
+    });
+  }
 
+  static specifics(factions = factionData) {
+    return this.byKind('specific', factions);
+  }
+
+  static generics(factions = factionData) {
+    return this.byKind('generic', factions);
+  }
 
 }
