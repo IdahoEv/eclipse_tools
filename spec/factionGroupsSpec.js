@@ -7,17 +7,20 @@ describe('factionGroups', ()=>{
     objects = [
       { set: 'A',
         name: 'foo',
-        kind: 'specific'
+        kind: 'specific',
+        color: 'blue'
       },
       {
         set: 'A',
         name: 'bar',
-        kind: 'generic'
+        kind: 'generic',
+        color: 'blue'
       },
       {
         set: 'B',
         name: 'baz',
-        kind: 'specific'
+        kind: 'specific',
+        color: 'lemon'
       }
     ];
   });
@@ -80,6 +83,48 @@ describe('factionGroups', ()=>{
       expect(names).not.toContain('Exiles');
       expect(names).toContain('Sentinels of Magellan');
       expect(names).not.toContain('Orion Hegemony');
+    });
+  });
+
+
+  describe('genericsExcludingPages', () => {
+    beforeEach(()=>{
+      objects = [
+        { set: 'A',
+          name: 'foo',
+          kind: 'specific',
+          page: '01'
+        },
+        {
+          set: 'A',
+          name: 'bar',
+          kind: 'generic',
+          page: '01'
+        },
+        {
+          set: 'A',
+          name: 'baz',
+          kind: 'specific',
+          page: '02'
+        },
+        {
+          set: 'A',
+          name: 'qux',
+          kind: 'generic',
+          page: '02'
+        },
+      ];
+    });
+
+    it("should strip out th matching colors", () => {
+      var filteredObjects = factionGroups.genericsExcludingPages(['01'], objects);
+      expect(filteredObjects.length).toEqual(1);
+
+      var names = filteredObjects.map((faction)=>{return faction.name});
+      expect(names).not.toContain('foo'); // not generic
+      expect(names).not.toContain('bar'); // on page 01
+      expect(names).not.toContain('baz'); // not generic
+      expect(names).toContain('qux');
     });
   });
 

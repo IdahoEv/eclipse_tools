@@ -23,4 +23,10 @@ export default class  {
     return this.byKind('generic', factions);
   }
 
+  static genericsExcludingPages(pages = [], factions = factionData) {
+    return this.generics(factions).filter((faction, _idx, _arr) => {
+      return !pages.includes(faction.page);
+    });
+  }
+
 }
