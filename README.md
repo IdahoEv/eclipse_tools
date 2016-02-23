@@ -1,4 +1,4 @@
-# eclipse_tools
+# Eclipse Tools
 
 [Eclipse](https://boardgamegeek.com/boardgame/72125/eclipse) is one of my favorite boardgames.  
 
@@ -21,4 +21,8 @@ of the base game might want to randomly select between the six aliens and one te
 terrans, or four, or whatever.
 
 
+## LICENSE AND CONTRIBUTION
 
+Licensed under MIT license, see LICENSE.txt.  If you'd like to contribute, please issue pull requests after ensuring
+that tests are passing. All contributors agree to abide by the code of conduct (Contributor Covenant 1.4), see 
+CODE_OF_CONDUCT.md.
