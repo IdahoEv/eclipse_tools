@@ -3,6 +3,34 @@ import FactionSet from '../src/FactionSet.js'
 
 describe('FactionSet', ()=>{
 
+  describe('factionsWithPlaceholders', () => {
+    var source, results;
+    beforeEach(() => {
+      source = [
+        { set: "Eclipse", name: "E1", kind: 'specific' },
+        { set: "Eclipse", name: "E2", kind: 'specific' },
+        { set: "Eclipse", name: "E3", kind: 'specific' },
+        { set: "Eclipse", name: "EG1", kind: 'generic' },
+        { set: "Eclipse", name: "EG2", kind: 'generic' },
+        { set: "Rise of the Ancients", name: "R1", kind: 'specific' },
+        { set: "Rise of the Ancients", name: "RG1", kind: 'generic' },
+      ];
+    });
+
+    it("should make an array with factions from one set and zero placeholders", () => {
+      var selector = { "Eclipse": { generics: 0} };
+      var results = FactionSet.factionsWithPlaceholders(selector, source);
+      expect(results.length).toEqual(3);
+      var names = results.map((faction) => {return faction.name});
+      expect(names).toContain("E1");
+      expect(names).toContain("E2");
+      expect(names).toContain("E3");
+      expect(names).not.toContain("EG1");
+      expect(names).not.toContain("EG2");
+      expect(names).not.toContain("R1");
+      expect(names).not.toContain("R2");
+    })
+  });
 
   describe('genericPlaceholder', () => {
     it("should generate an array containing a single generic placeholder for Eclipse", () => {

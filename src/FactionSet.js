@@ -10,6 +10,13 @@ const PLACEHOLDER_GENERIC_NAMES = {
 
 var FactionSet = class  {
 
+  static factionsWithPlaceholders(selector, source) {
+    var setNames = Object.keys(selector);
+    return source.filter((faction) => {
+      return (faction.set == "Eclipse" && faction.kind == 'specific');
+    });
+  }
+
   static genericPlaceholder(set, count=1) {
     var placeholders = [];
     for(var ii = 0; ii<count; ii++) {
