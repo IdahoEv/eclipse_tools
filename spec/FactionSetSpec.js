@@ -18,7 +18,7 @@ describe('FactionSet', ()=>{
     });
 
     it("should make an array with factions from one set and zero placeholders", () => {
-      var selector = { "Eclipse": { generics: 0} };
+      var selector = { "Eclipse": { numGenerics: 0} };
       var results = FactionSet.factionsWithPlaceholders(selector, source);
       expect(results.length).toEqual(3);
       var names = results.map((faction) => {return faction.name});
@@ -28,8 +28,46 @@ describe('FactionSet', ()=>{
       expect(names).not.toContain("EG1");
       expect(names).not.toContain("EG2");
       expect(names).not.toContain("R1");
-      expect(names).not.toContain("R2");
-    })
+      expect(names).not.toContain("RG1");
+    });
+
+    it("should make an array with factions from two sets and zero placeholders", () => {
+      var selector = {
+        "Eclipse":              { numGenerics: 0},
+        "Rise of the Ancients": { numGenerics: 0}
+      };
+      var results = FactionSet.factionsWithPlaceholders(selector, source);
+      expect(results.length).toEqual(4);
+      var names = results.map((faction) => {return faction.name});
+      expect(names).toContain("E1");
+      expect(names).toContain("E2");
+      expect(names).toContain("E3");
+      expect(names).not.toContain("EG1");
+      expect(names).not.toContain("EG2");
+      expect(names).toContain("R1");
+      expect(names).not.toContain("RG1");
+    });
+
+
+    it("should make an array with factions from two sets and two placeholders each", () => {
+      var selector = {
+        "Eclipse":              { numGenerics: 2},
+        "Rise of the Ancients": { numGenerics: 2}
+      };
+      var results = FactionSet.factionsWithPlaceholders(selector, source);
+      expect(results.length).toEqual(8);
+      var names = results.map((faction) => {return faction.name});
+      expect(names).toContain("E1");
+      expect(names).toContain("E2");
+      expect(names).toContain("E3");
+      expect(names).not.toContain("EG1");
+      expect(names).not.toContain("EG2");
+      expect(names).toContain("R1");
+      expect(names).not.toContain("RG1");
+
+      expect(names).toContain('terrans');
+      expect(names).toContain('magellan');
+    });
   });
 
   describe('genericPlaceholder', () => {

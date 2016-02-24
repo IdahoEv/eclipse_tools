@@ -10,12 +10,17 @@ const PLACEHOLDER_GENERIC_NAMES = {
 
 var FactionSet = class  {
 
+
   static factionsWithPlaceholders(selector, source) {
     var setNames = Object.keys(selector);
-    return source.filter((faction) => {
-      return (faction.set == "Eclipse" && faction.kind == 'specific');
-    });
+    var factionSet = [];
+
+    factionSet = factionSet.concat(this._gatherSpecifics(setNames, source));
+    factionSet = factionSet.concat(this._addGenericPlaceholders(selector));
+
+    return factionSet;
   }
+
 
   static genericPlaceholder(set, count=1) {
     var placeholders = [];
@@ -28,6 +33,24 @@ var FactionSet = class  {
     }
     return placeholders;
   }
+
+  // Pull all the specific factions from the named sets.
+  static _gatherSpecifics(setNames, source) {
+    return source.filter((faction) => {
+      return (setNames.includes(faction.set) && faction.kind == 'specific');
+    });
+  }
+
+  // Generate the right number of generic placeholders for the named sets
+  static _addGenericPlaceholders(selector, source) {
+    var placeholders = [];
+    for (let set of Object.keys(selector)) {
+      placeholders = placeholders.concat(
+        this.genericPlaceholder(set,selector[set].numGenerics)
+      );
+    }
+    return placeholders;
+  };
 }
 
 export default FactionSet
