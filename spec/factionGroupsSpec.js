@@ -86,7 +86,6 @@ describe('factionGroups', ()=>{
     });
   });
 
-
   describe('genericsExcludingPages', () => {
     beforeEach(()=>{
       objects = [
