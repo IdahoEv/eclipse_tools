@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Dosis|Abel|Exo:400,800,700italic,700,600italic,900,900italic,800italic,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600|Advent+Pro:400,700,600,500,300,200,100);
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(15,15,50);
+	font-family: Exo;
+	font-size: 30px;
+	color: white;
+}
+h1 {
+	font-weight: 800;
+	font-size: 50px;
+	text-align: center;
+}
+div {
+	font-weight: 500;
+}
+button {
+	color: black;
+	font-family: Exo;
+	font-weight: 700;
+	width: 25vw;
+	font-size: 40px;
+}
+span.select_container {
+	display: inline-block;
+	background-color: rgba(130,130,130,0.5);
+	color: black;
+	font-family: Exo;
+	font-weight: 700;
+	font-size: 30px;
+	width: 25vw;
+	text-align: center;
+}
+span.plus {
+	display: inline-block;
+	font-size: 40px;
+	width: 10vw;
+	text-align: center;
+}
+span.category {
+	display: inline-block;
+	width: 25vw;
+	padding-left: 10px;
+}
