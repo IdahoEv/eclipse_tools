@@ -70,6 +70,45 @@ describe('FactionSet', ()=>{
     });
   });
 
+  describe('safeGenericSubset', () => {
+    var source, selected, results;
+    beforeEach(() => {
+      source = [
+        { set: "Eclipse", name: "E1", kind: 'specific', page: '01' },
+        { set: "Eclipse", name: "E2", kind: 'specific', page: '02' },
+        { set: "Eclipse", name: "E3", kind: 'specific', page: '03' },
+        { set: "Eclipse", name: "EG1", kind: 'generic', page: '01' },
+        { set: "Eclipse", name: "EG2", kind: 'generic', page: '02' },
+        { set: "Eclipse", name: "EG3", kind: 'generic', page: '03' },
+        { set: "Rise of the Ancients", name: "R1", kind: 'specific', page: '04' },
+        { set: "Rise of the Ancients", name: "R2", kind: 'specific', page: '05' },
+        { set: "Rise of the Ancients", name: "RG1", kind: 'generic', page: '04' },
+        { set: "Rise of the Ancients", name: "RG2", kind: 'generic', page: '05' },
+      ];
+    });
+
+    it("should return the generics that don't have the same pages as already-selected specifics", () => {
+      selected = [
+        { set: "Eclipse",              name: "E2", kind: 'specific', page: '02' },
+        { set: "Rise of the Ancients", name: "R1", kind: 'specific', page: '04' },
+      ];
+      var results = FactionSet.safeGenericSubset("Eclipse", selected, source);
+      expect(results.length).toEqual(2);
+      expect(results).toContain({ set: "Eclipse", name: "EG1", kind: 'generic', page: '01' });
+      expect(results).toContain({ set: "Eclipse", name: "EG3", kind: 'generic', page: '03' });
+    });
+
+    it("should return the generics that don't have the same pages as already-selected specifics", () => {
+      selected = [
+        { set: "Eclipse",              name: "E2", kind: 'specific', page: '02' },
+        { set: "Rise of the Ancients", name: "R1", kind: 'specific', page: '04' },
+      ];
+      var results = FactionSet.safeGenericSubset("Rise of the Ancients", selected, source);
+      expect(results.length).toEqual(1);
+      expect(results).toContain({ set: "Rise of the Ancients", name: "RG2", kind: 'generic', page: '05' });
+    });
+  });
+
   describe('genericPlaceholder', () => {
     it("should generate an array containing a single generic placeholder for Eclipse", () => {
       expect(FactionSet.genericPlaceholder("Eclipse")).toEqual([{
