@@ -144,7 +144,54 @@ var factionData = [
       set:      "Rise of the Ancients",
       page:     "09"
 
+    },
+
+     // SHIP PACK ONE -- TODO: FIGURE OUT HOW TO USE THESE
+    {
+      name:     "Terran Separatists",
+      kind:     "generic",
+      color:    "gray",
+      set:      "Ship Pack One",
+      page:     "SP1-1"
+    },
+    {
+      name:     "Guardians of Magellan",
+      kind:     "generic",
+      color:    "gray",
+      set:      "Ship Pack One",
+      page:     "SP1-1"
+    },
+
+    // SHADOW OF THE RIFT
+    {
+      name:     "Octantis Vanguard",
+      kind:     "generic",
+      color:    "purple",
+      set:      "Shadow of the Rift",
+      page:     "SR1"
+    },
+    {
+      name:     "Shapers of Dorado",
+      kind:     "specific",
+      color:    "gray",
+      set:      "Shadow of the Rift",
+      page:     "SR1"
+    },
+    {
+      name:     "Octantis Autonomy",
+      kind:     "generic",
+      color:    "purple",
+      set:      "Shadow of the Rift",
+      page:     "SR2"
+    },
+    {
+      name:     "Pyxis Unity",
+      kind:     "specific",
+      color:    "white",
+      set:      "Shadow of the Rift",
+      page:     "SR2"
     }
+
   ]
 
 

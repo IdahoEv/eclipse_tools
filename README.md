@@ -10,7 +10,7 @@ This repository contains the beginnings of a website to provide helpful utilitie
 
 The first tool (currently in construction) is a faction randomizer - if one owns all the expansions there are 24 
 different playable factions with no standardized way to select them at random.  The faction randomizer will allow you 
-to specifywhich expansions you own, and how many "generic" (i.e. Terran, Magellan, or Octantis) factions you want included 
+to specify which expansions you own, and how many "generic" (i.e. Terran, Magellan, or Octantis) factions you want included 
 in the random pool, and ensure that no invalid combinations are generated.
 
 Your preferences for randomization will be stored in cookies, so you are already set up for the next game.
