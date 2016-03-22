@@ -34,8 +34,8 @@ var FactionRandomizer = class {
     var genericSubsets = {};
     selectedSetsWithGenerics.forEach((setName)=>{
       genericSubsets[setName] = ArrayTools.shuffle(
-        FactionSet.safeGenericSubset(setName, factionArray);
-      )
+        FactionSet.safeGenericSubset(setName, factionArray)
+      );
     });
 
     // for each generic placeholder in the faction array, replace it with a

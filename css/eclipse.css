@@ -21,9 +21,18 @@ button {
 	color: black;
 	font-family: Exo;
 	font-weight: 700;
-	width: 25vw;
-	font-size: 40px;
 }
+div.choice button {
+	font-size: 40px;
+	width: 25vw;
+}
+button#randomize_trigger {
+        font-size: 50px;
+        width: 80vw;
+        margin: 0 auto;
+        display: block;
+}
+
 span.select_container {
 	display: inline-block;
 	background-color: rgba(130,130,130,0.5);
