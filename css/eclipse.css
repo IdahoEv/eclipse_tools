@@ -23,8 +23,8 @@ button {
 	font-weight: 700;
 }
 div.choice button {
-	width: 25vw;
 	font-size: 40px;
+	width: 25vw;
 }
 button#randomize_trigger{
 	font-size: 50px;
