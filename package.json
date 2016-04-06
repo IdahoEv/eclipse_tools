@@ -3,7 +3,16 @@
   "version": "0.0.1",
   "description": "A tool for randomly selecting factions for the boardgame Eclipse by Touko Takhokallio.",
   "browserify": {
-    "transform": [["babelify", { "presets": ["es2015"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
   },
   "transform": [
     [
@@ -16,7 +25,8 @@
     ]
   ],
   "scripts": {
-    "build": "browserify src/main.js -o build/main.js"
+    "build": "browserify src/main.js -o build/main.js",
+    "watch": "watchify src/main.js -o build/main.js"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
