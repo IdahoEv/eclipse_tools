@@ -1,6 +1,9 @@
-import factionData from './factionData.js';
 import $ from "jquery";
+console.log('script loading');
 
-$('#randomize_trigger').click(()=>{
-  console.log("Trigger clicked!");
+$(function(){
+  console.log('ready handler running');
+  $('#randomize_trigger').click(()=>{
+    console.log("Trigger clicked!");
+  });
 });
