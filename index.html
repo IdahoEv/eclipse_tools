@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/eclipse.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/eclipse.css">-->
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="build/main.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
 		<title>
 			Eclipse Faction Randomizer
 		</title>
@@ -14,18 +16,16 @@
 		<div class="choice">
 			<p>
 				Pick factions for 
-					<span class="select_container">
-					<select id='player_count'>
-					<option>2</option>
-					<option>3</option>
-					<option selected='selected'>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					</select> 
-					</span>
+            <select id='player_count' class="ui dropdown">
+            <option>2</option>
+            <option>3</option>
+            <option selected='selected'>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            </select> 
 				 Players.
 			</p>
 		</div>
@@ -35,70 +35,55 @@
 			</p>
 		</div>
 		<div class="choice">      
-			<p id='eclipse_selections'>
-        <label for='eclipse_toggler'>
+			<div id='eclipse_selections'>
+        <div class='ui toggle checkbox'>          
           <input type="checkbox" class="expansion_toggler" checked='checked' id='eclipse_toggler'/>
-          Eclipse
-        </label>
-				<span class="plus">
-				 + 
-				 </span>
-				 <span class="select_container">
-				 <select>
-					<option>0</option>
-					<option>1</option>
-					<option selected='selected'>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-				</select>
-				</span>
+          <label><span class="set_name">Eclipse</span> w/ at most</label>
+        </div>
+          <select class="ui dropdown">
+            <option>0</option>
+            <option>1</option>
+            <option selected='selected'>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
 				<span class="category">
 				Terrans
 				</span>
-			</p>
-			<p id='rise_of_the_ancients_selections'>
-        <label for='rise_of_the_ancients_toggler'>
+			</div>
+			<div id='rise_of_the_ancients_selections'>
+        <div class='ui toggle checkbox'>          
           <input type="checkbox" class="expansion_toggler" id='rise_of_the_ancients_toggler' checked='checked'/>
-          RoTA
-        </label>
-				<span class="plus">
-				 + 
-				 </span>
-				 <span class="select_container">
-				 <select>
+          <label><span class="set_name">RoTA</span> w/ at most</label>
+        </div>
+				 <select class="ui dropdown">
 					<option>0</option>
 					<option selected='selected'>1</option>
 					<option>2</option>
 					<option>3</option>
 				</select> 
-				</span>
 				<span class="category">
 				Magellan
 				</span>
-			</p>
-			<p id='shadow_of_the_rift_selections'>
-        <label for="shadow_of_the_rift_toggler">
+			</div>
+			<div id='shadow_of_the_rift_selections'>
+        <div class='ui toggle checkbox'>          
           <input type="checkbox" class="expansion_toggler" id='shadow_of_the_rift_toggler'/>
-          SotR        
-        </label>
-				<span class="plus">
-				 + 
-				 </span>
-				 <span class="select_container">
-				 <select>
-					<option>0</option>
-					<option selected='selected'>1</option>
-					<option>2</option>
-				</select> 
-				</span>
+          <label><span class="set_name">SotA</span> w/at most</label>
+        </div>        
+           <select class="ui dropdown">
+            <option>0</option>
+            <option selected='selected'>1</option>
+            <option>2</option>
+          </select> 
 				<span class="category">
-				Octanis
+				Octantis
 				</span>
-			</p>
+			</div>
 		</div>
-		<button id="randomize_trigger">
+		<button id="randomize_trigger" class="ui button">
 			Randomize
 		</button>
 
@@ -106,10 +91,10 @@
       <table>        
       </table>
       <div id='results_buttons'>
-        <button id="reroll_trigger">
+        <button id="reroll_trigger" class="ui button">
           Re-Roll!
         </button>
-        <button id="change_trigger">
+        <button id="change_trigger" class="ui button">
           Change Settings
         </button>
       </div>  

@@ -22,9 +22,9 @@ var FactionRandomizer = class {
 
     // Insert placeholders for generic factions and randomize
     var factionArray = ArrayTools.shuffle(FactionSet.factionsWithPlaceholders(factionOptions));
-    //this._logFactionArray('--------------unrandomized factions', factionArray);
+    this._logFactionArray('--------------unrandomized factions', factionArray);
     //factionArray = ArrayTools.shuffle(factionArray);
-    //this._logFactionArray('--------------randomized factions', factionArray);
+    this._logFactionArray('--------------randomized factions', factionArray);
 
     var setSelectionCount = {
       'Eclipse': 0,
@@ -72,6 +72,7 @@ var FactionRandomizer = class {
         factionArray.splice(index, 1, genericSubsets[faction.set].pop());
       }
     });
+    this._logFactionArray('--------------final factions', factionArray);
 
     // Need a final shuffle to eliminate biases caused by the conflict resolver, which is
     // more likely to eliminate expansion set factions later in the array.
