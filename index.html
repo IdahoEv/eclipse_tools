@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!--<link rel="stylesheet" type="text/css" href="css/eclipse.css">-->
-		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="css/eclipse.css">
     <script src="build/main.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
 		<title>
@@ -10,9 +10,11 @@
 		</title>
 	</head>
 	<body>
+    <div id="faction_randomizer">
 		<h1>
 			ECLIPSE FACTION RANDOMIZER
 		</h1>
+      
 		<div class="choice">
 			<p>
 				Pick factions for 
@@ -34,58 +36,64 @@
 				Include factions from these sets:
 			</p>
 		</div>
-		<div class="choice">      
-			<div id='eclipse_selections'>
-        <div class='ui toggle checkbox'>          
-          <input type="checkbox" class="expansion_toggler" checked='checked' id='eclipse_toggler'/>
-          <label><span class="set_name">Eclipse</span> w/ at most</label>
-        </div>
-          <select class="ui dropdown">
-            <option>0</option>
-            <option>1</option>
-            <option selected='selected'>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-          </select>
-				<span class="category">
-				Terrans
-				</span>
-			</div>
-			<div id='rise_of_the_ancients_selections'>
-        <div class='ui toggle checkbox'>          
-          <input type="checkbox" class="expansion_toggler" id='rise_of_the_ancients_toggler' checked='checked'/>
-          <label><span class="set_name">RoTA</span> w/ at most</label>
-        </div>
-				 <select class="ui dropdown">
-					<option>0</option>
-					<option selected='selected'>1</option>
-					<option>2</option>
-					<option>3</option>
-				</select> 
-				<span class="category">
-				Magellan
-				</span>
-			</div>
-			<div id='shadow_of_the_rift_selections'>
-        <div class='ui toggle checkbox'>          
-          <input type="checkbox" class="expansion_toggler" id='shadow_of_the_rift_toggler'/>
-          <label><span class="set_name">SotA</span> w/at most</label>
-        </div>        
-           <select class="ui dropdown">
-            <option>0</option>
-            <option selected='selected'>1</option>
-            <option>2</option>
-          </select> 
-				<span class="category">
-				Octantis
-				</span>
-			</div>
-		</div>
-		<button id="randomize_trigger" class="ui button">
-			Randomize
-		</button>
+
+    <div id='eclipse_selections' class='row set_options'>
+      <div class='ui toggle checkbox'>          
+        <input type="checkbox" class="expansion_toggler" checked='checked' id='eclipse_toggler'/>
+        <label>Eclipse</label>
+      </div>
+      <div class="with_at_most">w/ at most</div>
+      <div class="category">
+        <select class="ui dropdown">
+          <option>0</option>
+          <option>1</option>
+          <option selected='selected'>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+        </select>
+        Terrans
+      </div>
+    </div>
+
+
+    <div id='rise_of_the_ancients_selections' class='row set_options'>
+      <div class='ui toggle checkbox'>          
+        <input type="checkbox" class="expansion_toggler" id='rise_of_the_ancients_toggler' checked='checked'/>
+        <label>RotA</label>
+      </div>
+      <div class="with_at_most">w/ at most</div>
+      <div class="category">
+        <select class="ui dropdown">
+          <option>0</option>
+          <option selected='selected'>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select> 
+        Magellan
+      </div>
+    </div>
+    <div id='shadow_of_the_rift_selections' class='row set_options'>
+      <div class='ui toggle checkbox'>          
+        <input type="checkbox" class="expansion_toggler" id='shadow_of_the_rift_toggler'/>
+        <label>SotR</label>
+      </div>
+      <div class="with_at_most">w/ at most</div>
+      <div class="category">
+        <select class="ui dropdown">
+          <option>0</option>
+          <option selected='selected'>1</option>
+          <option>2</option>
+        </select> 
+        Octantis
+      </div>
+    </div>
+    <div class='row'>
+      <button id="randomize_trigger" class="ui button">
+        Randomize
+      </button>
+    </div>
 
     <div id='results'>
       <table>        
@@ -100,5 +108,7 @@
       </div>  
     </div>
 
-	</body>
-</html>
+  </div>
+
+  </body>
+  </html>
