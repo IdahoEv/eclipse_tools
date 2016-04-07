@@ -28,9 +28,7 @@ var FactionUXInterface = class {
       num += 1;
     }
     $('#results table').html(output);
-    $('#results').show({
-      duration: 500
-    });
+    $('#results').show('blind');
   }
 }
 

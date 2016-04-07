@@ -43,6 +43,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "change-case": "^2.3.1"
+    "change-case": "^2.3.1",
+    "semantic-ui": "^2.1.8"
   }
 }

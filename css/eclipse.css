@@ -77,3 +77,12 @@ th {
         background: rgb(15, 15, 50);
         display: none;
 }
+#results_buttons {
+        display: block;
+        text-align: center;
+        margin: 1em auto;
+        width: 100%;
+}
+#results_buttons button {
+        width: 35vw;
+}

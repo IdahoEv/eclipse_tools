@@ -3,7 +3,7 @@ import UX         from './FactionUXInterface.js';
 import Randomizer from './FactionRandomizer.js';
 
 $(function(){
-  $('#randomize_trigger').click(()=>{
+  $('#randomize_trigger, #reroll_trigger').click(()=>{
     var options = {};
     options['Eclipse'] = UX.assembleFactionSpecifier('Eclipse');
     options['Rise of the Ancients'] = UX.assembleFactionSpecifier('Rise of the Ancients');
@@ -13,5 +13,8 @@ $(function(){
     var results = Randomizer.getRandomFactions(playerCount, options);
 
     UX.populateResults(results);
+  });
+  $('#change_trigger').click(()=>{
+    $('#results').hide('blind');
   });
 });
