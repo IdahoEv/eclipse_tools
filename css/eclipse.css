@@ -87,12 +87,16 @@ table {
         width: 80%;
         margin: 1em auto;
 }
+td, th {
+        padding: 0.25em;
+}
 td {
         font-weight: normal;
         text-align: center;
 }
 th {
         font-weight: bold;
+        border-bottom: 1px solid white;
 }
 #results {
         position: absolute;
