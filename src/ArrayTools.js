@@ -6,9 +6,11 @@ var ArrayTools = class {
   }
 
   static unique(arr) {
-    return a.reduce(function(p, c) {
+    return arr.reduce(function(p, c) {
         if (p.indexOf(c) < 0) p.push(c);
         return p;
     }, []);
   }
 }
+
+export default ArrayTools;

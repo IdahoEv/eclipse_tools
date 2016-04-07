@@ -41,5 +41,8 @@
     "karma-jasmine": "^0.3.7",
     "semantic-ui": "^2.1.8",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "change-case": "^2.3.1"
   }
 }

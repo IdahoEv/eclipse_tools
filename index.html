@@ -15,9 +15,7 @@
 			<p>
 				Pick factions for 
 					<span class="select_container">
-					<select>
-					<option>0</option>
-					<option>1</option>
+					<select id='player_count'>
 					<option>2</option>
 					<option>3</option>
 					<option>4</option>
@@ -36,11 +34,12 @@
 				Include factions from these sets:
 			</p>
 		</div>
-		<div class="choice">
-			<p>
-				<button>
-					Eclipse
-				</button>
+		<div class="choice">      
+			<p id='eclipse_selections'>
+        <label for='eclipse_toggler'>
+          <input type="checkbox" class="expansion_toggler" checked='checked' id='eclipse_toggler'/>
+          Eclipse
+        </label>
 				<span class="plus">
 				 + 
 				 </span>
@@ -59,10 +58,11 @@
 				Terrans
 				</span>
 			</p>
-			<p>
-				<button>
-					RoTA
-				</button>
+			<p id='rise_of_the_ancients_selections'>
+        <label for='rise_of_the_ancients_toggler'>
+          <input type="checkbox" class="expansion_toggler" id='rise_of_the_ancients_toggler'/>
+          RoTA
+        </label>
 				<span class="plus">
 				 + 
 				 </span>
@@ -78,10 +78,11 @@
 				Magellan
 				</span>
 			</p>
-			<p>
-				<button>
-					SotR
-				</button>
+			<p id='shadow_of_the_rift_selections'>
+        <label for="shadow_of_the_rift_toggler">
+          <input type="checkbox" class="expansion_toggler" id='shadow_of_the_rift_toggler'/>
+          SotR        
+        </label>
 				<span class="plus">
 				 + 
 				 </span>
@@ -100,5 +101,11 @@
 		<button id="randomize_trigger">
 			Randomize
 		</button>
+
+    <div id='results'>
+      <table>        
+      </table>
+    </div>
+
 	</body>
 </html>

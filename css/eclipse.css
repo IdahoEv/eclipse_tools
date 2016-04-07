@@ -21,6 +21,7 @@ button {
 	color: black;
 	font-family: Exo;
 	font-weight: 700;
+        font-size: inherit;
 }
 div.choice button {
 	font-size: 40px;
@@ -54,4 +55,25 @@ span.category {
 	display: inline-block;
 	width: 25vw;
 	padding-left: 10px;
+}
+
+table {
+        width: 80%;
+        margin: 1em auto;
+}
+td {
+        font-weight: normal;
+        text-align: center;
+}
+th {
+        font-weight: bold;
+}
+#results {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgb(15, 15, 50);
+        display: none;
 }

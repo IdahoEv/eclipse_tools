@@ -1,5 +1,8 @@
 import FactionSet from './FactionSet.js';
-import ArrayShuffler from './ArrayShuffler.js';
+import ArrayTools from './ArrayTools.js';
+
+console.log("Randomizer script loading");
+console.log(ArrayTools);
 
 var FactionRandomizer = class {
 
@@ -49,3 +52,5 @@ var FactionRandomizer = class {
     return factionArray;
   }
 }
+
+export default FactionRandomizer;
