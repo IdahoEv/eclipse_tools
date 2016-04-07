@@ -63,6 +63,8 @@ div.set_options.disabled, div.set_options.disabled label {
         color: gray;
 }
 
+/* The !important here are unavoidable due to use of that
+ * directive inside semantic-ui. :-(  */
 div.set_options .ui.checkbox label {
         white-space: nowrap;
         color: white !important;
