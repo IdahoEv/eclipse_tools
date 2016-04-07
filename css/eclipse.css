@@ -23,9 +23,9 @@ button {
 	font-weight: 700;
         font-size: inherit;
 }
-div.choice button {
-	font-size: 40px;
+div.choice label {
 	width: 25vw;
+        display: inline-block;
 }
 button#randomize_trigger{
 	font-size: 50px;

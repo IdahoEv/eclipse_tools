@@ -68,6 +68,28 @@ describe('FactionSet', ()=>{
       expect(names).toContain('terrans');
       expect(names).toContain('magellan');
     });
+
+    it("should make an array with factions from two sets and two placeholders each", () => {
+      var selector = {
+        "Eclipse":              { numGenerics: 2},
+        "Rise of the Ancients": { numGenerics: 2},
+        "Shadow of the Rift":   false
+      };
+      var results = FactionSet.factionsWithPlaceholders(selector, source);
+      console.log(results);
+      expect(results.length).toEqual(8);
+      var names = results.map((faction) => {return faction.name});
+      expect(names).toContain("E1");
+      expect(names).toContain("E2");
+      expect(names).toContain("E3");
+      expect(names).not.toContain("EG1");
+      expect(names).not.toContain("EG2");
+      expect(names).toContain("R1");
+      expect(names).not.toContain("RG1");
+
+      expect(names).toContain('terrans');
+      expect(names).toContain('magellan');
+    });
   });
 
   describe('safeGenericSubset', () => {
@@ -111,7 +133,7 @@ describe('FactionSet', ()=>{
 
   describe('genericPlaceholder', () => {
     it("should generate an array containing a single generic placeholder for Eclipse", () => {
-      expect(FactionSet.genericPlaceholder("Eclipse")).toEqual([{
+      expect(FactionSet.genericPlaceholder("Eclipse",1)).toEqual([{
         kind: "generic",
         set:  "Eclipse",
         name: "terrans",
@@ -119,7 +141,7 @@ describe('FactionSet', ()=>{
       }]);
     });
     it("should generate an array containing a single generic placeholder for Rise of the Ancients", () => {
-      expect(FactionSet.genericPlaceholder("Rise of the Ancients")).toEqual([{
+      expect(FactionSet.genericPlaceholder("Rise of the Ancients", 1)).toEqual([{
         kind: "generic",
         set:  "Rise of the Ancients",
         name: "magellan",
@@ -127,7 +149,7 @@ describe('FactionSet', ()=>{
       }]);
     });
     it("should generate an array containing a single generic placeholder for Shadow of the Rift", () => {
-      expect(FactionSet.genericPlaceholder("Shadow of the Rift")).toEqual([{
+      expect(FactionSet.genericPlaceholder("Shadow of the Rift", 1)).toEqual([{
         kind: "generic",
         set:  "Shadow of the Rift",
         name: "octantis",

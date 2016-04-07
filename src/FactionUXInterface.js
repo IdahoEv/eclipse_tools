@@ -14,7 +14,7 @@ var FactionUXInterface = class {
 
 
     if ($(checkbox).prop('checked')) {
-      return { generics: $(dropdown).val() };
+      return { numGenerics: Number($(dropdown).val()) };
     } else {
       return false;
     }

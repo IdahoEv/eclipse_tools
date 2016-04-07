@@ -14,7 +14,7 @@ var FactionSet = class  {
 
 
   static factionsWithPlaceholders(selector, source = factionData) {
-    var setNames = Object.keys(selector);
+    var setNames = this._extractSetNames(selector);
     var factionSet = [];
 
     factionSet = factionSet.concat(this._gatherSpecifics(setNames, source));
@@ -24,7 +24,7 @@ var FactionSet = class  {
   }
 
 
-  static genericPlaceholder(set, count=1) {
+  static genericPlaceholder(set, count) {
     var placeholders = [];
     for(var ii = 0; ii<count; ii++) {
       var obj = {};
@@ -44,7 +44,8 @@ var FactionSet = class  {
   // "Hydran Progress" and "Terran Federation", which are printed on
   // opposite sides of the same play mat.
   static safeGenericSubset(set, selectedSpecifics, source = factionData ) {
-    var selectedPages = selectedSpecifics.map((faction) => { return faction.page});
+    var selectedPages = selectedSpecifics.map((faction) => faction.page);
+
     return source.filter((faction) => {
         return faction.kind == 'generic'
           && faction.set == set
@@ -62,13 +63,19 @@ var FactionSet = class  {
   // Generate the right number of generic placeholders for the named sets
   static _addGenericPlaceholders(selector, source) {
     var placeholders = [];
-    for (let set of Object.keys(selector)) {
+    for (let set of this._extractSetNames(selector)) {
       placeholders = placeholders.concat(
         this.genericPlaceholder(set,selector[set].numGenerics)
       );
     }
     return placeholders;
   };
+
+
+  static _extractSetNames(selector) {
+    // Keep only the names of sets with truthy values in the selector
+    return Object.keys(selector).filter((set) => selector[set]);
+  }
 }
 
 export default FactionSet
