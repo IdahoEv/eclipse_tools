@@ -62,7 +62,21 @@ var FactionUXInterface = class {
     if (maxPlayers > 12) {
       maxPlayers = 12;
     }
-    // disable all player # greater than maxPlayers
+
+    // Don't allow randomize if there aren't any sets selected
+    $("#randomize_trigger").prop('disabled', maxPlayers < 2);
+
+    // If the user currently has too many players selected, reduce their
+    // selection to the max currently allowable
+    var playerCount = $('#player_count').val();
+    if (playerCount > maxPlayers) {
+      $('#player_count').val(maxPlayers.toString())
+    }
+
+    // disable all player # options greater than maxPlayers
+    for (var ii = 2; ii < 13; ii++) {
+      $('#player_count_'+ii).prop("disabled", ii > maxPlayers);
+    }
   }
 
   static _disableOptionRow(setName) {
