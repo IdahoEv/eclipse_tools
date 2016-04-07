@@ -14,16 +14,10 @@ h1 {
 	font-weight: 800;
 	font-size: 50px;
 	text-align: center;
+        font-family: Exo;
 }
 div {
 	font-weight: 500;
-}
-button {
-	color: black;
-	font-family: Exo;
-	font-weight: 700;
-        font-size: inherit;
-        margin: 1em;
 }
 select.ui.dropdown {
         background: transparent;
@@ -53,20 +47,21 @@ div.set_options .ui.checkbox {
         width: 15em;
 }
 div.set_options .with_at_most {
-        width: 10em;
 }
 div.set_options select {
         width: 3em;
 }
 div.set_options .category {
-        width: 12em;
+        width: 10em;
+}
+
+div.set_options disabled {
+        color: rgba(0.8, 0.8, 0.8, 0.8);
 }
 
 
 
 div.set_options .ui.checkbox label {
-        font-size: 30px;
-        display: inline-block;
         white-space: nowrap;
         color: white !important;
 }
@@ -90,10 +85,6 @@ span.select_container {
 	font-size: 30px;
 	text-align: center;
 }
-span.category {
-	display: inline-block;
-	padding-left: 10px;
-}
 
 table {
         width: 80%;
@@ -114,6 +105,7 @@ th {
         left: 0;
         background: rgb(15, 15, 50);
         display: none;
+        font-size: 30px;
 }
 #results_buttons {
         display: block;
@@ -123,4 +115,23 @@ th {
 }
 #results_buttons button {
         width: 35vw;
+}
+
+
+/* font sizes of various elements, collected for future responsiveness */
+div.set_options {
+        font-size: 20px;
+}
+div.set_options .category {
+        font-size: 30px;
+}
+ div.set_options .ui.checkbox label {
+        font-size: 30px;
+}
+#results {
+        font-size: 30px;
+        z-index: 10;
+}
+#results th {
+        font-size: 35px;
 }
