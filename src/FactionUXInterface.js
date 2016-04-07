@@ -35,12 +35,11 @@ var FactionUXInterface = class {
   static digest(){
     var maxPlayers = 0;
 
-    // TODO probably DRY this out, eh?
+    // TODO probably DRY this bit out, eh?
     if ($('#eclipse_selections .expansion_toggler').prop('checked')) {
       maxPlayers += 6;
       $('#eclipse_selections').removeClass('disabled');
     } else {
-      console.log("eclipse is off");
       $('#eclipse_selections').addClass('disabled');
     }
 

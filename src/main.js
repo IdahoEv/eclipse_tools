@@ -18,7 +18,6 @@ $(function(){
     $('#results').hide('blind');
   });
   $('.expansion_toggler').change((element) => {
-    console.log('toggler switched');
     UX.digest();
   });
   UX.digest();
