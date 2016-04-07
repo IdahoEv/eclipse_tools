@@ -9,8 +9,6 @@ $(function(){
     options['Rise of the Ancients'] = UX.assembleFactionSpecifier('Rise of the Ancients');
     options['Shadow of the Rift']   = UX.assembleFactionSpecifier('Shadow of the Rift');
 
-    console.log("Selecting factions with options:");
-    console.table(options);
     var playerCount = $('#player_count').val();
     var results = Randomizer.getRandomFactions(playerCount, options);
 

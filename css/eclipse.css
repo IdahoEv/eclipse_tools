@@ -143,3 +143,10 @@ div.set_options .ui.checkbox label {
 #results th {
         font-size: 35px;
 }
+
+
+.footer {
+        margin-top: 2em;
+        text-align: center;
+        color: #ccc;
+}
