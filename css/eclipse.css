@@ -43,6 +43,7 @@ div.set_options {
         align-content: center;
         margin-bottom: 10px;
         margin-top: 10px;
+        position: relative;
 }
 div.set_options > * {
         margin: 0 1em;
@@ -58,12 +59,9 @@ div.set_options select, div.player_options select {
 div.set_options .category {
         width: 10em;
 }
-
-div.set_options disabled {
-        color: rgba(0.8, 0.8, 0.8, 0.8);
+div.set_options.disabled, div.set_options.disabled label {
+        color: gray;
 }
-
-
 
 div.set_options .ui.checkbox label {
         white-space: nowrap;
@@ -71,6 +69,10 @@ div.set_options .ui.checkbox label {
 }
 div.set_options .ui.toggle.checkbox input:checked~label{
         color: white !important;
+}
+div.set_options.disabled {
+        color: rgba(0.8, 0.8, 0.8, 0.8) !important;
+        border-color: rgba(0.6, 0.6, 0.6, 0.8) !important;
 }
 
 button#randomize_trigger{

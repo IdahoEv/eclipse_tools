@@ -19,7 +19,9 @@ $(function(){
   $('#change_trigger').click(()=>{
     $('#results').hide('blind');
   });
-  $('#expansion_toggler').change((element) => {
+  $('.expansion_toggler').change((element) => {
     console.log('toggler switched');
+    UX.digest();
   });
+  UX.digest();
 });

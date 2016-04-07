@@ -30,6 +30,43 @@ var FactionUXInterface = class {
     $('#results table').html(output);
     $('#results').show('blind');
   }
+
+  // Handle all the things that need to get updated when a setting changes
+  static digest(){
+    var maxPlayers = 0;
+
+    if ($('#eclipse_selections .expansion_toggler').prop('checked')) {
+      maxPlayers += 6;
+      console.log("eclipse is on");
+      $('#eclipse_selections').removeClass('disabled');
+    } else {
+      console.log("eclipse is off");
+      $('#eclipse_selections').addClass('disabled');
+    }
+
+    if ($('#rise_of_the_ancients_selections .expansion_toggler').prop('checked')) {
+      maxPlayers += 3;
+      $('#rise_of_the_ancients_selections').removeClass('disabled');
+    } else {
+      $('#rise_of_the_ancients_selections').addClass('disabled');
+    }
+
+
+    if ($('#shadow_of_the_rift_selections .expansion_toggler').prop('checked')) {
+      maxPlayers += 2;
+      $('#shadow_of_the_rift_selections').removeClass('disabled');
+    } else {
+      $('#shadow_of_the_rift_selections').addClass('disabled');
+    }
+
+    if (maxPlayers > 12) {
+      maxPlayers = 12;
+    }
+    // disable all player # greater than maxPlayers
+  }
+
+  static _disableOptionRow(setName) {
+  }
 }
 
 export default FactionUXInterface;
