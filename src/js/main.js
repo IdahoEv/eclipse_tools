@@ -1,4 +1,3 @@
-import $ from "jquery";
 import UX         from './FactionUXInterface.js';
 import Randomizer from './FactionRandomizer.js';
 
@@ -22,5 +21,8 @@ $(function(){
   $('.expansion_toggler').change((element) => {
     UX.digest();
   });
+
+  $('.ui.dropdown').dropdown();
+
   UX.digest();
 });

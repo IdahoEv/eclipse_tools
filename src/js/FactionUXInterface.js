@@ -1,5 +1,4 @@
 import changeCase from 'change-case';
-import $ from "jquery";
 
 var FactionUXInterface = class {
 
