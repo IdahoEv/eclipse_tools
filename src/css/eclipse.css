@@ -17,12 +17,12 @@ h1 {
 div {
 	font-weight: 500;
 }
-select.ui.dropdown {
+.ui.dropdown {
         background: transparent;
         border: 1px solid gray;
         text-align: center;
 }
-select.ui.dropdown option {
+.ui.dropdown option {
         text-align: center;
 }
 
@@ -45,9 +45,11 @@ div.set_options {
 }
 div.set_options > * {
         margin: 0 5px;
+        flex-shrink: 1;
 }
 div.set_options .ui.checkbox {
-        width: 15em;
+        width: 12em;
+        min-width: auto;
 }
 div.set_options .with_at_most {
 }
@@ -61,18 +63,68 @@ div.set_options.disabled, div.set_options.disabled label {
         color: gray;
 }
 
+.ui.selection.dropdown, .ui.selection.dropdown .item {
+        background: transparent;
+}
+.ui.selection.dropdown .menu {
+        background-color: rgb(15,15,50);
+}
+.ui.selection.dropdown {
+        width: 2.5em;
+        min-width: auto;
+        padding-top: 10px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        padding-right: 50px;
+        min-height: 1.5em;
+        /*padding: 0.25em 0.5em;*/
+}
+.ui.selection.dropdown,
+.ui.selection.dropdown:hover,
+.ui.selection.dropdown .item,
+.ui.selection.dropdown .item.selected,
+.ui.selection.dropdown .item.active,
+.ui.selection.dropdown .item:hover,
+.ui.selection.visible.dropdown > .text:not(.default) {
+        color: white;
+        border-color: white;
+}
+.disabled .ui.selection.dropdown,
+.disabled .ui.selection.dropdown:hover,
+.disabled .ui.selection.dropdown .item,
+.disabled .ui.selection.dropdown .item.selected,
+.disabled .ui.selection.dropdown .item.active,
+.disabled .ui.selection.dropdown .item:hover,
+.disabled .ui.selection.visible.dropdown > .text:not(.default) {
+        color: gray;
+        border-color: gray;
+}
+.ui.selection.dropdown .menu {
+        max-height: 80vh;
+ }
+.ui.selection.dropdown > .dropdown.icon {
+        right: 0.5em ;
+}
+.ui.selection.dropdown .item.active, .ui.selection.dropdown .item:hover {
+        background-color: rgb(30,30,80);
+}
+
+
 /* The !important here are unavoidable due to use of that
  * directive inside semantic-ui. :-(  */
 div.set_options .ui.checkbox label {
         white-space: nowrap;
         color: white !important;
 }
+div.set_options.disabled .ui.checkbox label {
+        color: gray !important;
+}
 div.set_options .ui.toggle.checkbox input:checked~label{
         color: white !important;
 }
-div.set_options.disabled {
-        color: rgba(0.8, 0.8, 0.8, 0.8) !important;
-        border-color: rgba(0.6, 0.6, 0.6, 0.8) !important;
+div.set_options.disabled, div.set_options.disabled .ui.checkbox label {
+        color: rgb(0.8, 0.8, 0.8) !important;
+        border-color: rgb(0.6, 0.6, 0.6) !important;
 }
 
 button#randomize_trigger{
@@ -133,18 +185,19 @@ h1 {
 div.set_options {
         font-size: 20px;
 }
-div.set_options .category, div.player_options {
-        font-size: 24px;
-}
-div.set_options .ui.checkbox label {
-        font-size: 24px;
+div.set_options .category, div.player_options, div.set_options .ui.checkbox label {
+        font-size: 20px;
 }
 div.set_options .with_at_most {
         font-size: 12px;
 }
-select.ui.dropdown, select.ui.dropdown optgroup  {
+.ui.dropdown{
         font-size: 30px;
 }
+.ui.dropdown .menu > .item  {
+        font-size: 20px;
+}
+
 button#randomize_trigger {
         font-size: 35px;
 }
@@ -163,4 +216,30 @@ button#randomize_trigger {
         margin-top: 2em;
         text-align: center;
         color: #ccc;
+}
+
+@media screen and (min-width: 480px){
+
+  div.set_options, div.set_options .category, div.player_options, div.set_options .ui.checkbox label {
+          font-size: 24px;
+  }
+
+}
+
+@media screen and (min-width: 600px){
+
+  h1, #randomize_trigger {
+    font-size: 50px;
+  }
+  div.set_options, div.set_options .category, div.player_options, div.set_options .ui.checkbox label {
+          font-size: 30px;
+  }
+  div.set_options, div.player_options {
+    margin-bottom: 1.5em;
+  }
+  div.set_options .with_at_most {
+        font-size: 20px;
+  }
+
+
 }
