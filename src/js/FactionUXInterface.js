@@ -28,7 +28,8 @@ var FactionUXInterface = class {
       num += 1;
     }
     $('#results table').html(output);
-    $('#results').slideDown(350);
+    $('#results').show(350);
+    $('#settings').hide(350);
   }
 
   // Handle all the things that need to get updated when a setting changes

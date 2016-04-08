@@ -7,12 +7,10 @@ body {
 	background-color: rgb(15,15,50);
 	font-family: Exo;
 	color: white;
-        margin: 10px;
         padding: 10px;
 }
 h1 {
 	font-weight: 800;
-	font-size: 50px;
 	text-align: center;
         font-family: Exo;
 }
@@ -41,8 +39,8 @@ div.set_options {
         justify-content: center;
         align-items: center;
         align-content: center;
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-bottom: .5em;
+        margin-top: .5em;
         position: relative;
 }
 div.set_options > * {
@@ -78,7 +76,6 @@ div.set_options.disabled {
 }
 
 button#randomize_trigger{
-	font-size: 50px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -100,12 +97,15 @@ th {
         font-weight: bold;
         border-bottom: 1px solid white;
 }
+#main_container {
+        position: relative;
+}
 #results {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
+        /*position: absolute;*/
+        /*height: 100%;*/
+        /*width: 100%;*/
+        /*top: 0;*/
+        /*left: 0;*/
         background: rgb(15, 15, 50);
         display: none;
         font-size: 30px;
@@ -127,23 +127,37 @@ th {
 
 
 /* font sizes of various elements, collected for future responsiveness */
+h1 {
+        font-size: 30px;
+}
 div.set_options {
         font-size: 20px;
 }
 div.set_options .category, div.player_options {
-        font-size: 30px;
+        font-size: 24px;
 }
 div.set_options .ui.checkbox label {
+        font-size: 24px;
+}
+div.set_options .with_at_most {
+        font-size: 12px;
+}
+select.ui.dropdown, select.ui.dropdown optgroup  {
         font-size: 30px;
 }
+button#randomize_trigger {
+        font-size: 35px;
+}
 #results {
-        font-size: 30px;
+        font-size: 20px;
         z-index: 10;
 }
 #results th {
         font-size: 35px;
 }
-
+#results button {
+        text-transform: uppercase;
+}
 
 .footer {
         margin-top: 2em;
