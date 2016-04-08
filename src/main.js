@@ -15,7 +15,7 @@ $(function(){
     UX.populateResults(results);
   });
   $('#change_trigger').click(()=>{
-    $('#results').hide('blind');
+    $('#results').slideUp(300);
   });
   $('.expansion_toggler').change((element) => {
     UX.digest();

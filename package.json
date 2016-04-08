@@ -1,6 +1,6 @@
 {
   "name": "eclipse-faction-tool",
-  "version": "0.0.1",
+  "version": "0.9.9",
   "description": "A tool for randomly selecting factions for the boardgame Eclipse by Touko Takhokallio.",
   "browserify": {
     "transform": [
@@ -26,12 +26,15 @@
   ],
   "scripts": {
     "build": "browserify src/main.js -o build/main.js",
-    "watch": "watchify src/main.js -o build/main.js"
+    "watch": "watchify src/main.js -o build/main.js",
+    "prep": "npm run build; cp index.html build/; cp semantic/dist/semantic.css build/css/; cp semantic/dist/semantic.min.js build/; cp css/eclipse.css build/css"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "http-server": "^0.9.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "jquery": "^2.2.1",
