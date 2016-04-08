@@ -5,6 +5,7 @@ var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var babel = require('babelify');
+var browserSync = require('browser-sync').create();
 
 function compile(watch) {
   var bundler = watchify(
@@ -52,16 +53,24 @@ gulp.task('html',  function() {
   gulp.src('src/index.html').pipe(gulp.dest('./build/'));
 });
 gulp.task('css',  function() {
-  gulp.src('src/css/eclipse.css').pipe(gulp.dest('./build/css'));
+  gulp.src('src/css/eclipse.css')
+    .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream());
 });
 gulp.task('semantic',  function() {
   gulp.src('semantic/dist/semantic.css').pipe(gulp.dest('./build/css'));
   gulp.src('semantic/dist/semantic.js') .pipe(gulp.dest('./build/js'));
 });
-
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./build/"
+    }
+  });
+});
 
 gulp.task('clean', function() {
   return del(['build/', 'build/css']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'browser-sync']);

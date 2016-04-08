@@ -46,7 +46,7 @@ div.set_options {
         position: relative;
 }
 div.set_options > * {
-        margin: 0 1em;
+        margin: 0 5px;
 }
 div.set_options .ui.checkbox {
         width: 15em;
@@ -54,7 +54,7 @@ div.set_options .ui.checkbox {
 div.set_options .with_at_most {
 }
 div.set_options select, div.player_options select {
-        width: 3em;
+        width: 2em;
 }
 div.set_options .category {
         width: 10em;
