@@ -71,7 +71,7 @@ div.set_options.disabled, div.set_options.disabled label {
 }
 .ui.selection.dropdown {
         width: 2.5em;
-        min-width: auto;
+        min-width: initial;
         padding-top: 10px;
         padding-bottom: 8px;
         padding-left: 10px;
