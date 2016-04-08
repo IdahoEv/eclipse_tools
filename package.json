@@ -34,6 +34,8 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
     "http-server": "^0.9.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
@@ -43,6 +45,8 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
     "semantic-ui": "^2.1.8",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
