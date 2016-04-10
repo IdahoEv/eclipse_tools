@@ -1,11 +1,9 @@
 import changeCase from 'change-case';
+import Randomizer from './FactionRandomizer.js';
 
 var FactionUXInterface = class {
 
-  static assembleFactionOptions() {
-
-  }
-  static assembleFactionSpecifier(expansion) {
+  static _assembleFactionSpecifier(expansion) {
 
     var divID = '#' + changeCase.snakeCase(expansion) + '_selections';
     var checkbox = divID + ' .expansion_toggler';
@@ -84,7 +82,29 @@ var FactionUXInterface = class {
     }
   }
 
-  static _disableOptionRow(setName) {
+  static setUpOnLoad(){
+    $('#randomize_trigger, #reroll_trigger').click(()=>{
+      var options = {};
+      options['Eclipse'] =              this._assembleFactionSpecifier('Eclipse');
+      options['Rise of the Ancients'] = this._assembleFactionSpecifier('Rise of the Ancients');
+      options['Shadow of the Rift']   = this._assembleFactionSpecifier('Shadow of the Rift');
+
+      var playerCount = $('#player_count').val();
+      var results = Randomizer.getRandomFactions(playerCount, options);
+
+      this.populateResults(results);
+    });
+
+
+    $('#change_trigger').click(()=>{
+      //$('#results').slideUp(300);
+      $('#results').hide(300);
+      $('#settings').show(300);
+    });
+    $('.expansion_toggler').change((element) => {
+      this.digest();
+    });
+    this.digest();
   }
 }
 
