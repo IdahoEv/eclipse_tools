@@ -1,8 +1,8 @@
-# Eclipse Tools
+# Eclipse Tools - (http://eclipse.idahoev.com)
 
 [Eclipse](https://boardgamegeek.com/boardgame/72125/eclipse) is one of my favorite boardgames.  
 
-This repository contains the beginnings of a website to provide helpful utilities for players. 
+This tool repository contains the beginnings of a website to provide helpful utilities for players. 
 
 ![Eclipse Game Cover Art](https://boardgamegeek.com/camo/bf6c7bb31a3a26307cafacb388dae4054e3eb560/687474703a2f2f7777772e6269676461646479736372656174696f6e732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031332f30342f626c6f672d706f73742e6a7067)
 
