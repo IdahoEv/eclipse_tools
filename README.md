@@ -1,5 +1,4 @@
-# Eclipse Tools 
-[http://eclipse.idahoev.com](http://eclipse.idahoev.com)
+# Eclipse Tools - (http://eclipse.idahoev.com)
 
 [Eclipse](https://boardgamegeek.com/boardgame/72125/eclipse) is one of my favorite boardgames.  
 
