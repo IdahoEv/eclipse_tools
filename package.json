@@ -30,6 +30,7 @@
     "browser-sync": "^2.11.2",
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "http-server": "^0.9.0",

@@ -93,6 +93,7 @@ var FactionUXInterface = class {
       var results = Randomizer.getRandomFactions(playerCount, options);
 
       this.populateResults(results);
+      ga('send', 'event', 'Faction Randomizer', 'Generate', '', playerCount);
     });
 
 

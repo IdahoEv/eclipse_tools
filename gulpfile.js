@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -68,6 +69,10 @@ gulp.task('browser-sync', function() {
     }
   });
 });
+
+gulp.task('deploy', ['build'], shell.task(
+  'rsync -auv --exclude="*.sw?" build/ root@eclipse.idahoev.com:/var/www/eclipse'
+));
 
 gulp.task('clean', function() {
   return del(['build/', 'build/css']);
