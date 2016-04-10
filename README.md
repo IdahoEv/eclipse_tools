@@ -13,11 +13,17 @@ different playable factions with no standardized way to select them at random.  
 to specify which expansions you own, and how many "generic" (i.e. Terran, Magellan, or Octantis) factions you want included 
 in the random pool, and ensure that no invalid combinations are generated.
 
+### Current Features
+
+The randomizer supports the base game and the two primary expansions: Rise of the Ancient and Shadow of the Rift. 
+With all three included, it can generate a list of up to 11 players.
+
 ### Planned additions
 
 * Store your most recent settings in a cookie, so you are already set up for the next game.
 * Allow manual entry of player names
 * Better graphics with faction pictures
+* Support for up to 12 players with Ship Pack 1 factions and/or Elders of the Solstice.
 
 ### Explanation for non-players: 
 Each players uses a cardboard play mat showing their faction. The play mats are all
@@ -25,6 +31,9 @@ printed with an alien species on one side and a "generic" faction on the other s
 aliens with different abilities and six "Terrans".  The terrans are all identical except for color. Some players 
 of the base game might want to randomly select between the six aliens and one terran, some might want to include zero 
 terrans, or four, or whatever.
+
+This process gets more complicated when the game's expansion sets are included, each with their own "generic" faction
+that has multiple copies included.
 
 
 ## LICENSE AND CONTRIBUTION
