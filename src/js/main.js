@@ -2,6 +2,7 @@ import UX         from './FactionUXInterface.js';
 import Randomizer from './FactionRandomizer.js';
 
 $(function(){
+
   $('#randomize_trigger, #reroll_trigger').click(()=>{
     var options = {};
     options['Eclipse'] = UX.assembleFactionSpecifier('Eclipse');
@@ -13,6 +14,8 @@ $(function(){
 
     UX.populateResults(results);
   });
+
+
   $('#change_trigger').click(()=>{
     //$('#results').slideUp(300);
     $('#results').hide(300);

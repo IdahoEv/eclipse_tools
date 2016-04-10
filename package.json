@@ -1,6 +1,6 @@
 {
   "name": "eclipse-faction-tool",
-  "version": "0.9.9",
+  "version": "1.1.2",
   "description": "A tool for randomly selecting factions for the boardgame Eclipse by Touko Takhokallio.",
   "browserify": {
     "transform": [

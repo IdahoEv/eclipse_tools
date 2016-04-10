@@ -74,7 +74,13 @@ var FactionUXInterface = class {
 
     // disable all player # options greater than maxPlayers
     for (var ii = 2; ii < 13; ii++) {
-      $('#player_count_'+ii).prop("disabled", ii > maxPlayers);
+      if ( ii > maxPlayers) {
+        $('#player_count_'+ii).prop("disabled", true);
+        $(`#player_options .menu .item[data-value='${ii}']`).addClass("disabled");
+      } else {
+        $('#player_count_'+ii).prop("disabled", false);
+        $(`#player_options .menu .item[data-value='${ii}']`).removeClass("disabled");
+      }
     }
   }
 

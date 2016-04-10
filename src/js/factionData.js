@@ -166,28 +166,28 @@ var factionData = [
     {
       name:     "Octantis Vanguard",
       kind:     "generic",
-      color:    "purple",
+      color:    "(any)",
       set:      "Shadow of the Rift",
       page:     "SR1"
     },
     {
       name:     "Shapers of Dorado",
       kind:     "specific",
-      color:    "gray",
+      color:    "(any)",
       set:      "Shadow of the Rift",
       page:     "SR1"
     },
     {
       name:     "Octantis Autonomy",
       kind:     "generic",
-      color:    "purple",
+      color:    "(any)",
       set:      "Shadow of the Rift",
       page:     "SR2"
     },
     {
       name:     "Pyxis Unity",
       kind:     "specific",
-      color:    "white",
+      color:    "(any)",
       set:      "Shadow of the Rift",
       page:     "SR2"
     }
